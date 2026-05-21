@@ -1,0 +1,80 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "VicoHome einrichten",
+        "description": "Verbinde dein VicoHome-Konto mit Home Assistant.",
+        "data": {
+          "email": "E-Mail",
+          "password": "Passwort",
+          "region": "Region",
+          "polling_interval": "Aktualisierungsintervall (Sekunden)"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Verbindung fehlgeschlagen. Bitte prüfe deine Anmeldedaten."
+    },
+    "abort": {
+      "already_configured": "Dieses Konto ist bereits konfiguriert."
+    }
+  },
+  "entity": {
+    "binary_sensor": {
+      "motion": { "name": "Bewegung" },
+      "online": { "name": "Online" },
+      "charging": { "name": "Lädt" },
+      "awake": { "name": "Aktiv" },
+      "recording_audio": { "name": "Audio-Aufnahme" },
+      "live_audio": { "name": "Live-Audio" },
+      "alarm_remove": { "name": "Alarm bei Entfernung" },
+      "ota_awake": { "name": "OTA bei Aktivierung" },
+      "activated": { "name": "Aktiviert" },
+      "dormancy_plan": { "name": "Schlafplan" },
+      "sd_card": { "name": "SD-Karte" },
+      "firmware_current": { "name": "Firmware aktuell" }
+    },
+    "sensor": {
+      "event_count": { "name": "Ereignisse (1h)" },
+      "last_event": { "name": "Letztes Ereignis" },
+      "battery": { "name": "Akku" },
+      "signal": { "name": "Signal" },
+      "firmware": { "name": "Firmware" },
+      "resolution": { "name": "Auflösung" },
+      "ip": { "name": "IP-Adresse" },
+      "wake_time": { "name": "Aufwachzeit" },
+      "status_text": { "name": "Status" },
+      "wifi_mode": { "name": "WiFi-Modus" },
+      "location": { "name": "Standort" },
+      "mac": { "name": "MAC-Adresse" },
+      "model": { "name": "Modell" },
+      "home_name": { "name": "Zuhause" },
+      "activation": { "name": "Aktiviert" },
+      "device_status": { "name": "Gerätestatus" },
+      "white_light": { "name": "Weißlicht" },
+      "wifi_channel": { "name": "WiFi-Kanal" },
+      "mcu": { "name": "MCU" },
+      "role": { "name": "Rolle" },
+      "timezone": { "name": "Zeitzone" }
+    },
+    "switch": {
+      "notifications": { "name": "Benachrichtigungen" }
+    },
+    "number": {
+      "polling_interval": { "name": "Aktualisierungsintervall" }
+    },
+    "text": {
+      "telegram_bot": { "name": "Telegram-Bot-Token" },
+      "telegram_chat": { "name": "Telegram-Empfänger-ID" }
+    },
+    "button": {
+      "open_video": { "name": "Video öffnen" }
+    },
+    "camera": {
+      "camera": { "name": "Kamera" }
+    },
+    "image": {
+      "last_image": { "name": "Letztes Bild" }
+    }
+  }
+}

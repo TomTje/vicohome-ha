@@ -6,7 +6,7 @@
 - 📸 Snapshot camera + event image entity
 - 📊 Sensors: events, battery, signal, IP, firmware
 - 🔔 Telegram notifications (photo + video)
-- 🎛️ Buttons: snapshot, refresh, restart
+- 🎛️ Buttons: snapshot, refresh, restart *(planned)*
 - ⚙️ Runtime config via HA UI
 - 💾 Persistent serial cache (survives restarts)
 

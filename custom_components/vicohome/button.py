@@ -30,10 +30,12 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry, async_add_e
 class VicoHomeVideoButton(CoordinatorEntity, ButtonEntity):
     """Button that opens the latest event video URL via persistent notification."""
 
+    _attr_has_entity_name = True
+    _attr_translation_key = "open_video"
+
     def __init__(self, coordinator: VicoHomeCoordinator):
         super().__init__(coordinator)
         self._attr_unique_id = f"{coordinator.email}_video_btn"
-        self._attr_name = "VicoHome Video öffnen"
         self._attr_device_info = _device_info(coordinator)
         self._attr_icon = "mdi:video"
 
@@ -47,7 +49,7 @@ class VicoHomeVideoButton(CoordinatorEntity, ButtonEntity):
                 "create",
                 {
                     "title": "VicoHome Video",
-                    "message": "Keine Events verfügbar.",
+                    "message": "No events available.",
                     "notification_id": "vicohome_no_event",
                 },
             )
@@ -65,15 +67,15 @@ class VicoHomeVideoButton(CoordinatorEntity, ButtonEntity):
                 "create",
                 {
                     "title": f"VicoHome – {device_name}",
-                    "message": f"Kein Video verfügbar für Event {trace_id}.",
+                    "message": f"No video available for event {trace_id}.",
                     "notification_id": f"vicohome_{trace_id}",
                 },
             )
             return
 
         msg = (
-            f"🎥 [Video öffnen]({video_url})\n\n"
-            f"📷 [Bild ansehen]({image_url})\n"
+            f"🎥 [Open Video]({video_url})\n\n"
+            f"📷 [View Image]({image_url})\n"
             f"🆔 Trace: `{trace_id}`"
         )
 

@@ -23,10 +23,12 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry, async_add_e
 class VicoHomeTelegramBot(CoordinatorEntity, TextEntity):
     """Text entity for Telegram bot token."""
 
+    _attr_has_entity_name = True
+    _attr_translation_key = "telegram_bot"
+
     def __init__(self, coordinator: VicoHomeCoordinator):
         super().__init__(coordinator)
         self._attr_unique_id = f"{coordinator.email}_telegram_bot"
-        self._attr_name = "VicoHome Telegram Bot Token"
         self._attr_icon = "mdi:robot"
         self._attr_mode = "password"
         self._attr_device_info = DeviceInfo(
@@ -49,10 +51,12 @@ class VicoHomeTelegramBot(CoordinatorEntity, TextEntity):
 class VicoHomeTelegramChat(CoordinatorEntity, TextEntity):
     """Text entity for Telegram chat/recipient ID."""
 
+    _attr_has_entity_name = True
+    _attr_translation_key = "telegram_chat"
+
     def __init__(self, coordinator: VicoHomeCoordinator):
         super().__init__(coordinator)
         self._attr_unique_id = f"{coordinator.email}_telegram_chat"
-        self._attr_name = "VicoHome Telegram Empfänger-ID"
         self._attr_icon = "mdi:send"
         self._attr_device_info = DeviceInfo(
             identifiers={(DOMAIN, coordinator.email)},

@@ -46,10 +46,13 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry, async_add_e
 class VicoHomeMotionSensor(CoordinatorEntity, BinarySensorEntity):
     """Binary sensor that turns on when a new event is detected."""
 
+    _attr_has_entity_name = True
+    _attr_translation_key = "motion"
+
+
     def __init__(self, coordinator: VicoHomeCoordinator):
         super().__init__(coordinator)
         self._attr_unique_id = f"{coordinator.email}_motion"
-        self._attr_name = "VicoHome Motion"
         self._attr_device_class = BinarySensorDeviceClass.MOTION
         self._attr_device_info = _device_info(coordinator)
         self._last_triggered = None
@@ -76,10 +79,13 @@ class VicoHomeMotionSensor(CoordinatorEntity, BinarySensorEntity):
 class VicoHomeOnlineSensor(CoordinatorEntity, BinarySensorEntity):
     """Binary sensor showing if camera is online."""
 
+    _attr_has_entity_name = True
+    _attr_translation_key = "online"
+
+
     def __init__(self, coordinator: VicoHomeCoordinator):
         super().__init__(coordinator)
         self._attr_unique_id = f"{coordinator.email}_online"
-        self._attr_name = "VicoHome Online"
         self._attr_device_class = BinarySensorDeviceClass.CONNECTIVITY
         self._attr_device_info = _device_info(coordinator)
 
@@ -96,10 +102,13 @@ class VicoHomeOnlineSensor(CoordinatorEntity, BinarySensorEntity):
 class VicoHomeChargingSensor(CoordinatorEntity, BinarySensorEntity):
     """Binary sensor showing if camera is charging."""
 
+    _attr_has_entity_name = True
+    _attr_translation_key = "charging"
+
+
     def __init__(self, coordinator: VicoHomeCoordinator):
         super().__init__(coordinator)
         self._attr_unique_id = f"{coordinator.email}_charging"
-        self._attr_name = "VicoHome Charging"
         self._attr_device_class = BinarySensorDeviceClass.BATTERY_CHARGING
         self._attr_device_info = _device_info(coordinator)
 
@@ -116,10 +125,13 @@ class VicoHomeChargingSensor(CoordinatorEntity, BinarySensorEntity):
 class VicoHomeAwakeSensor(CoordinatorEntity, BinarySensorEntity):
     """Binary sensor showing if camera is awake (not sleeping)."""
 
+    _attr_has_entity_name = True
+    _attr_translation_key = "awake"
+
+
     def __init__(self, coordinator: VicoHomeCoordinator):
         super().__init__(coordinator)
         self._attr_unique_id = f"{coordinator.email}_awake"
-        self._attr_name = "VicoHome Awake"
         self._attr_device_info = _device_info(coordinator)
 
     @property
@@ -144,10 +156,13 @@ class VicoHomeAwakeSensor(CoordinatorEntity, BinarySensorEntity):
 class VicoHomeRecordingAudioSensor(CoordinatorEntity, BinarySensorEntity):
     """Binary sensor showing if recording audio is enabled."""
 
+    _attr_has_entity_name = True
+    _attr_translation_key = "recording_audio"
+
+
     def __init__(self, coordinator: VicoHomeCoordinator):
         super().__init__(coordinator)
         self._attr_unique_id = f"{coordinator.email}_recording_audio"
-        self._attr_name = "VicoHome Recording Audio"
         self._attr_device_info = _device_info(coordinator)
 
     @property
@@ -163,10 +178,13 @@ class VicoHomeRecordingAudioSensor(CoordinatorEntity, BinarySensorEntity):
 class VicoHomeLiveAudioSensor(CoordinatorEntity, BinarySensorEntity):
     """Binary sensor showing if live audio is enabled."""
 
+    _attr_has_entity_name = True
+    _attr_translation_key = "live_audio"
+
+
     def __init__(self, coordinator: VicoHomeCoordinator):
         super().__init__(coordinator)
         self._attr_unique_id = f"{coordinator.email}_live_audio"
-        self._attr_name = "VicoHome Live Audio"
         self._attr_device_info = _device_info(coordinator)
 
     @property
@@ -182,10 +200,13 @@ class VicoHomeLiveAudioSensor(CoordinatorEntity, BinarySensorEntity):
 class VicoHomeAlarmRemoveSensor(CoordinatorEntity, BinarySensorEntity):
     """Binary sensor for alarm when camera is removed."""
 
+    _attr_has_entity_name = True
+    _attr_translation_key = "alarm_remove"
+
+
     def __init__(self, coordinator: VicoHomeCoordinator):
         super().__init__(coordinator)
         self._attr_unique_id = f"{coordinator.email}_alarm_remove"
-        self._attr_name = "VicoHome Alarm on Remove"
         self._attr_device_info = _device_info(coordinator)
 
     @property
@@ -201,10 +222,13 @@ class VicoHomeAlarmRemoveSensor(CoordinatorEntity, BinarySensorEntity):
 class VicoHomeOtaAwakeSensor(CoordinatorEntity, BinarySensorEntity):
     """Binary sensor showing if OTA update happens on awake."""
 
+    _attr_has_entity_name = True
+    _attr_translation_key = "ota_awake"
+
+
     def __init__(self, coordinator: VicoHomeCoordinator):
         super().__init__(coordinator)
         self._attr_unique_id = f"{coordinator.email}_ota_awake"
-        self._attr_name = "VicoHome OTA on Awake"
         self._attr_device_info = _device_info(coordinator)
 
     @property
@@ -220,10 +244,13 @@ class VicoHomeOtaAwakeSensor(CoordinatorEntity, BinarySensorEntity):
 class VicoHomeActivatedSensor(CoordinatorEntity, BinarySensorEntity):
     """Binary sensor showing if device is activated."""
 
+    _attr_has_entity_name = True
+    _attr_translation_key = "activated"
+
+
     def __init__(self, coordinator: VicoHomeCoordinator):
         super().__init__(coordinator)
         self._attr_unique_id = f"{coordinator.email}_activated"
-        self._attr_name = "VicoHome Activated"
         self._attr_device_info = _device_info(coordinator)
 
     @property
@@ -239,10 +266,13 @@ class VicoHomeActivatedSensor(CoordinatorEntity, BinarySensorEntity):
 class VicoHomeDormancyPlanSensor(CoordinatorEntity, BinarySensorEntity):
     """Binary sensor showing if dormancy plan is active."""
 
+    _attr_has_entity_name = True
+    _attr_translation_key = "dormancy_plan"
+
+
     def __init__(self, coordinator: VicoHomeCoordinator):
         super().__init__(coordinator)
         self._attr_unique_id = f"{coordinator.email}_dormancy_plan"
-        self._attr_name = "VicoHome Sleep Plan"
         self._attr_device_info = _device_info(coordinator)
 
     @property
@@ -258,10 +288,13 @@ class VicoHomeDormancyPlanSensor(CoordinatorEntity, BinarySensorEntity):
 class VicoHomeSdCardSensor(CoordinatorEntity, BinarySensorEntity):
     """Binary sensor showing if SD card is present."""
 
+    _attr_has_entity_name = True
+    _attr_translation_key = "sd_card"
+
+
     def __init__(self, coordinator: VicoHomeCoordinator):
         super().__init__(coordinator)
         self._attr_unique_id = f"{coordinator.email}_sd_card"
-        self._attr_name = "VicoHome SD Card"
         self._attr_device_class = BinarySensorDeviceClass.PRESENCE
         self._attr_device_info = _device_info(coordinator)
 
@@ -290,10 +323,13 @@ class VicoHomeSdCardSensor(CoordinatorEntity, BinarySensorEntity):
 class VicoHomeFirmwareStatusSensor(CoordinatorEntity, BinarySensorEntity):
     """Binary sensor showing if firmware is up to date."""
 
+    _attr_has_entity_name = True
+    _attr_translation_key = "firmware_current"
+
+
     def __init__(self, coordinator: VicoHomeCoordinator):
         super().__init__(coordinator)
         self._attr_unique_id = f"{coordinator.email}_firmware_current"
-        self._attr_name = "VicoHome Firmware Current"
         self._attr_device_info = _device_info(coordinator)
 
     @property

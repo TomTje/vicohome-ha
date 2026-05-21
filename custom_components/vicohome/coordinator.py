@@ -201,7 +201,7 @@ class VicoHomeCoordinator(DataUpdateCoordinator):
 
     async def _async_send_telegram(self, event: dict) -> None:
         """Send Telegram notification for a new event."""
-        device_name = event.get("deviceName", "unbekannt")
+        device_name = event.get("deviceName", "unknown")
         ts_raw = event.get("timestamp")
         try:
             from datetime import datetime, timezone
@@ -216,9 +216,9 @@ class VicoHomeCoordinator(DataUpdateCoordinator):
         video_url = event.get("videoUrl", "")
 
         msg = (
-            f"🎥 *VicoHome Bewegung erkannt!*\n\n"
-            f"📷 Gerät: {device_name}\n"
-            f"⏰ Zeit: {ts_str}\n"
+            f"🎥 *VicoHome Motion detected!*\n\n"
+            f"📷 Device: {device_name}\n"
+            f"⏰ Time: {ts_str}\n"
             f"🆔 Trace: `{trace_id}`"
         )
 

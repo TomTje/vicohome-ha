@@ -24,7 +24,7 @@ We are actively looking for testers with different VicoHome models and regions.
 - 📊 **Sensors**: event count (1h), last event details, battery, signal strength, IP, firmware, status
 - 🔔 **Telegram Notifications** with photo + video (configurable)
 - ⚙️ **Runtime settings** via HA UI: notification toggle, polling interval, Telegram bot/token
-- 🎛️ **Buttons**: Manual snapshot, force refresh, restart device
+- 🎛️ **Buttons**: Manual snapshot, force refresh, restart device *(planned)*
 - 💾 **Persistent serial cache** — survives Home Assistant restarts
 
 ### Requirements
@@ -58,10 +58,10 @@ We are actively looking for testers with different VicoHome models and regions.
    - **Region** (EU or US)
    - **Polling Interval** (default: 180 s)
 4. After setup, use the new entities to configure Telegram:
-   - `switch.vicohome_benachrichtigungen` — ON/OFF
-   - `text.vicohome_telegram_bot_token` — your Telegram bot token
-   - `text.vicohome_telegram_empfanger_id` — your Telegram chat ID
-   - `number.vicohome_aktualisierungsintervall` — seconds (60–3600)
+  - `switch.vicohome_notifications` — ON/OFF
+  - `text.vicohome_telegram_bot_token` — your Telegram bot token
+  - `text.vicohome_telegram_recipient_id` — your Telegram chat ID
+  - `number.vicohome_polling_interval` — seconds (60–3600)
 
 ### Supported Devices
 

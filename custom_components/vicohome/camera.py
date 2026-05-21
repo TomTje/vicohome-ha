@@ -31,12 +31,14 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry, async_add_e
 class VicoHomeCamera(CoordinatorEntity, Camera):
     """Camera entity showing the latest event snapshot."""
 
+    _attr_has_entity_name = True
+    _attr_translation_key = "camera"
+
     def __init__(self, coordinator: VicoHomeCoordinator):
         super().__init__(coordinator)
         Camera.__init__(self)
         self._webrtc_provider = None
         self._attr_unique_id = f"{coordinator.email}_camera"
-        self._attr_name = "VicoHome Camera"
         self._attr_is_streaming = False
         self._attr_is_recording = False
         self._attr_device_info = _device_info(coordinator)
