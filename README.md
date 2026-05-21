@@ -134,6 +134,13 @@ We are actively looking for testers with different VicoHome models and regions.
 
 ### Changelog
 
+**v1.3.0**
+- 🌍 Full English + German localization for all entities
+- 📝 New `translations/en.json` and `translations/de.json`
+- 🔧 All entity names now use Home Assistant translation system (`translation_key` + `has_entity_name`)
+- 📨 Notification messages default to English
+- ⚠️ Breaking: Entity IDs now use English names by default
+
 **v1.2.0** (2026-05-03)
 - 🔧 Fix: Persistent serial cache — no more "Blocking IO" warnings on restart
 - 🎛️ New: Button platform (snapshot, refresh, restart)
